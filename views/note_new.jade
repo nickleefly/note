@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= title
+    div.newnote
+        form( method="post")
+            div
+                div
+                    span.label Title :
+                    input(type="text", name="title", id="editNoteTitle")
+                div
+                    span.label Name :
+                    input(type="text", name="name", id="editNoteName")
+                div#editNoteSubmit
+                    input(class="center" type="submit", value="Save")
+        a(href="/")!= "Back to Note List"

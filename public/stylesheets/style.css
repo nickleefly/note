@@ -1,0 +1,86 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  text-align: center;
+  text-stroke: 1px rgba(255,255,255,0.1);
+  color: #555;
+}
+a {
+  color: #00b7ff;
+}
+h1,
+h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #343434;
+}
+h1 {
+  text-shadow: 1px 2px 2px #ddd;
+  font-size: 60px;
+}
+#notes {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+}
+#notes .note {
+  margin: 20px;
+}
+#notes .note .created_at {
+  display: none;
+}
+#notes .note .title {
+  font-weight: bold;
+  background-color: #eee;
+  height: 20px;
+}
+#notes .note .title .button {
+  height: 20px;
+  float: right;
+  position: relative;
+  width: 80px;
+}
+#notes .note .title .button #edit {
+  position: absolute;
+  left: 0;
+}
+#notes .note .title .button #delete {
+  position: absolute;
+  right: 0;
+}
+#notes .note .name {
+  background-color: #ffa;
+}
+.newnote {
+  border: 3px;
+  border-color: #000;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 14px;
+}
+#editNoteSubmit {
+  width: 450px;
+}
+#editNoteSubmit .center {
+  margin: 0 auto;
+}
+input[type =text] {
+  width: 200px;
+  margin-left: 16px;
+  float: left;
+}
+input[type =button],
+input[type =submit] {
+  clear: both;
+  text-align: left;
+  display: block;
+}
+.label {
+  width: 150px;
+  text-align: right !important;
+  display: block;
+  float: left;
+}
