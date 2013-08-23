@@ -32,15 +32,15 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-var options = {
-  host: 'ds041208.mongolab.com',
-  port: 41208,
-  db: 'heroku_app17679066',
-  username: "heroku_app17679066",
-  password: "18di99eo9f9q90eohc8bc3ecbf"
-};
+//MONGOHQ_URL: mongodb://heroku:1c928b9b2d160aa03a083acaf48f9f5e@paulo.mongohq.com:10019/app17681166
 
-var noteProvider = new NoteProvider(options);
+var noteProvider = new NoteProvider({
+  host: 'paulo.mongohq.com',
+  port: 10019,
+  db: 'app17681166',
+  username: "heroku",
+  password: "1c928b9b2d160aa03a083acaf48f9f5e"
+});
 
 app.get('/', function(req, res){
   noteProvider.findAll(function(error, notes){
@@ -94,5 +94,5 @@ app.post('/note/:id/delete', function(req, res) {
   });
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 console.log('Express server listening on port 3000');
