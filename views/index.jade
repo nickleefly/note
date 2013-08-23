@@ -6,7 +6,7 @@ block content
     - each note in notes
       div.note
         div.created_at= note.created_at
-        div.title= note.title 
+        div.title
           div.button
             form( method="post", action="/note/:id/delete") 
               input(name="_id", type="hidden", value=note._id.toHexString()) 
@@ -14,5 +14,6 @@ block content
             form( method="get", action="/note/:id/edit") 
               input(name="_id", type="hidden", value=note._id.toHexString()) 
               input(id="edit", value="Edit", type="submit")
+          = note.title
         div.name= note.name
     a(href="/note/new")!= "Add New Note"

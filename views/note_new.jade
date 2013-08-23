@@ -7,10 +7,11 @@ block content
       div
         div
           span.label Title :
-          input(type="text", name="title", id="editNoteTitle")
+          input(type="text", name="title", id="editNoteTitle", autocomplete="off")
         div
           span.label Name :
-          input(type="text", name="name", id="editNoteName")
+          input(type="text", name="name", id="editNoteName", 
+          autocomplete="off")
         div#editNoteSubmit
           input(class="center" type="submit", value="Save")
     a(href="/")!= "Back to Note List"
