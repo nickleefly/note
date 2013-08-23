@@ -4,11 +4,22 @@ var Server = require('mongodb').Server;
 var BSON = require('mongodb').BSON;
 var ObjectID = require('mongodb').ObjectID;
 
-NoteProvider = function(host, port) {
-  this.db= new Db('note', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
-  this.db.open(function(){});
+NoteProvider = function(options) {
+  var _parent = this;
+  this.db = new Db(options.db, new Server(options.host, options.port, {safe: false}, {auto_reconnect: true}, {}));
+  // this.db.open(function(){});
+  this.db.open(function(err) {
+    _parent.db.authenticate(
+      options.username, 
+      options.password, 
+      function(err) {
+            if (err) {
+               console.log(err);
+            }
+        }
+    );
+});
 };
-
 
 NoteProvider.prototype.getCollection= function(callback) {
   this.db.collection('note', function(error, note_collection) {

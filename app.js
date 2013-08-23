@@ -32,7 +32,15 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-var noteProvider = new NoteProvider('localhost', 27017);
+var options = {
+  host: 'ds041208.mongolab.com',
+  port: 41208,
+  db: 'heroku_app17679066',
+  username: "heroku_app17679066",
+  password: "18di99eo9f9q90eohc8bc3ecbf"
+};
+
+var noteProvider = new NoteProvider(options);
 
 app.get('/', function(req, res){
   noteProvider.findAll(function(error, notes){
