@@ -82,7 +82,7 @@ app.post('/note/:id/edit', function(req, res) {
 //delete an note
 app.post('/note/:id/delete', function(req, res) {
   noteProvider.delete(req.param('_id'), function(error, docs) {
-          res.redirect('/')
+    res.redirect('/')
   });
 });
 

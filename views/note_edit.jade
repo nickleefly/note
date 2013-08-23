@@ -1,17 +1,17 @@
 extends layout
 
 block content
-    h1= "Edit Note"
-    div.newnote
-        form( method="post")
-            input(name="_id", type="hidden", value=note._id.toHexString()) 
-            div
-                div
-                    span.label Title :
-                    input(type="text", name="title", id="editNoteTitle", value=note.title)
-                div
-                    span.label Name :
-                    input(type="text", name="name", id="editNoteName", value=note.name)
-                div#editNoteSubmit
-                    input(class="center" type="submit", value="Update")
-        a(href="/")!= "Back to Note List"
+  h1= "Edit Note"
+  div.newnote
+    form( method="post")
+      input(name="_id", type="hidden", value=note._id.toHexString()) 
+      div
+        div
+          span.label Title :
+          input(type="text", name="title", id="editNoteTitle", value=note.title)
+        div
+          span.label Name :
+          input(type="text", name="name", id="editNoteName", value=note.name)
+        div#editNoteSubmit
+          input(class="center" type="submit", value="Update")
+    a(href="/")!= "Back to Note List"
